@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planner - Compass</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles/reset.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <div class="container-titulo__header">
+            <h2 class="titulo__header">Planejamento Semanal</h2>
+            <h4 class="semi-titulo__header">Utilize o formulário para adicionar novas tarefas</h4>
+        </div>
+        <button class="button__header button-green__header">Salvar localStorage</button>
+        <button class="button__header button-red__header">Excluir localStorage</button>
+
+        <div class="container-date__header">
+            <div class="container-date-center__header">
+                <h2 class="horario__header">10:58</h2>
+                <h4 class="date__header">27 de Setembro de 2022</h4>
+            </div>
+        </div>
+    </header>
+
+    <main class="container__main">
+        <div class="inputs-container__main">
+            <input type="text" name="atividade" value="" placeholder="Atividade" id="atividade">
+            <select name="dias-semanas" class="inputs-select__main">
+                <option value="d-semana">Domingo</option>
+                <option value="d-semana">Segunda-feira</option>
+                <option value="d-semana">Terça-feira</option>
+                <option value="d-semana">Quarta-feira</option>
+                <option value="d-semana">Quinta-feira</option>
+                <option value="d-semana">Sexta-feira</option>
+                <option value="d-semana">Sábado</option>
+            </select>
+            <select name="horario-dia" class="inputs-select__main">
+                <option value="horario">00:00</option>
+                <option value="horario">00:30</option>
+                <option value="horario">01:00</option>
+                <option value="horario">01:30</option>
+                <option value="horario">02:00</option>
+                <option value="horario">02:30</option>
+                <option value="horario">03:00</option>
+                <option value="horario">03:30</option>
+                <option value="horario">04:00</option>
+                <option value="horario">04:30</option>
+                
+            </select>
+
+            <button class="button__header button-green__header">Adicionar Atividade</button>
+            <button class="button__header button-red__header">Excluir Todos</button>
+        </div>
+
+        <div class="planner__container">
+            <div class="container__planner-horarios">
+                <div class="planner__horario">
+                    <h2>Horário</h2>
+                </div>
+            </div>
+
+            <div class="container__dias-semana">
+                <div class="dia__semana dia-segunda__color">
+                    <h2>Segunda-Feira</h2>
+                </div>
+                <div class="dia__semana dia-terça__color">
+                    <h2>Terça-Feira</h2>
+                </div>
+                <div class="dia__semana" id="dia-quarta__color">
+                    <h2>Quarta-Feira</h2>
+                </div>
+                <div class="dia__semana dia-quinta__color">
+                    <h2>Quinta-Feira</h2>
+                </div>
+                <div class="dia__semana dia-sexta__color">
+                    <h2>Sexta-Feira</h2>
+                </div>
+                <div class="dia__semana dia-sabado__color">
+                    <h2>Sábado</h2>
+                </div>
+                <div class="dia__semana dia-domingo__color">
+                    <h2>Domingo</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grid-etiquetas__main">
+            <div class="container__planner-horarios">
+                <div class="planner__horario">
+                    <h2>Horário</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
