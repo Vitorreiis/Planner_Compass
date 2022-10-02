@@ -1,0 +1,38 @@
+/* Começando a estilização da main*/
+
+.container__main .inputs-container__main{
+    background-color: transparent;
+    height: 100px;
+}
+
+.inputs-container__main{
+    display: flex;
+    align-items: center;
+}
+
+.inputs-container__main #atividade{
+    width: 424px;
+    height: 44px;   
+    border: 1px solid #2CBE82;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 89px;
+    gap: 4px;
+    margin-left: 3.125em;
+    font-family: "Poppins";
+}
+
+.inputs-container__main .inputs-select__main{
+    width: 210px;
+    height: 44px;
+    border: 1px solid #2CBE82;
+    border-radius: 10px;
+    margin-left: 1.688em;
+    font-family: "Poppins";
+    padding-left: 12px;
+    margin-right: 28px;
+}

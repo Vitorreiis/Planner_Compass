@@ -1,0 +1,170 @@
+/* Estilizando planner*/
+
+.planner__container{
+    background-color: transparent;
+    display: flex;
+}
+
+.container__planner-horarios{
+    background-color: transparent;
+    width: max-content;
+}
+
+ .planner__horario{
+    width: 85px;
+    height: 75px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 9px;
+    font-weight: 400;
+    font-size: 17px;
+    margin-left: 1em;
+}
+
+.container__dias-semana{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin-left: 1em;
+}
+
+.container__dias-semana .dia__semana{
+    height: 33px;
+    width: 150px;
+    left: 0px;
+    top: 0px;
+    
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+    border-radius: 9px 9px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.75em;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--branco);
+}
+
+.dia-segunda__color{
+    background-color: #FFA246;
+}
+
+.dia-terça__color{
+    background-color: #35E185;
+}
+
+#dia-quarta__color{
+    background-color: #6688FF;
+    width: 190px;
+}
+
+.dia-quinta__color{
+    background-color: #B266FF;
+}
+
+.dia-sexta__color{
+    background-color: #66D1FF;
+}
+
+.dia-sabado__color{
+    background-color: #FF66D4;
+}
+
+.dia-domingo__color{
+    background-color: #FF6666;
+}
+
+.container-etiquetas__main{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-card__main{
+    display: flex;
+    width: 512px;
+    margin-left: 19px;
+
+    background: linear-gradient(112.83deg, rgba(255, 255, 255, 0.3444) 0%, rgba(255, 255, 255, 0.336) 110.84%);
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+}
+
+.container-cards-interno__main{
+    display: flex;
+    margin-top: 10px;
+}
+.planner-horario-interno__card{
+    width: 85px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.horario-interno__card{
+    font-weight: 400;
+    font-size: 17px;
+    padding: 10px;
+}
+
+.container-card__main .border-card__main{
+    width: 3%;
+
+    background: orange;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.texto-button__card-interno{
+    width: 87%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-card__main .texto-card__main{
+    padding: 13px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #333333;
+}
+
+.container-card__main .button-card__main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 12px;
+    width: 57px;
+    height: 25px;
+    background: #98031E;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--branco);
+    padding: 2.5px 4px;
+    border: none;
+    margin-right: 8px;
+    margin-top: 6px;
+}
+
+.planner-horario__card{
+    width: 85px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 9px;
+    font-weight: 400;
+    font-size: 17px;
+    margin-left: 1em;
+}

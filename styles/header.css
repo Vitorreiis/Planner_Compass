@@ -38,6 +38,8 @@
     border-radius: 10px;
     border: none;
     color: var(--branco);
+    font-size: clamp(6px, 12px, 16px);
+    font-family: 'Poppins';
 }
 
 .button-green__header{
@@ -65,135 +67,11 @@
 }
 
 .container-date__header .horario__header{
-    font-size: 2.5em;
+    font-size: 2.9vw
+    ;
     font-weight: 400;
 }
 
 .container-date__header .date__header{
-    font-size: 20px;
-}
-
-/* Começando a estilização da main*/
-
-.container__main .inputs-container__main{
-    background-color: transparent;
-    height: 100px;
-}
-
-.inputs-container__main{
-    display: flex;
-    align-items: center;
-}
-
-.inputs-container__main #atividade{
-    width: 424px;
-    height: 44px;   
-    border: 1px solid #2CBE82;
-    border-radius: 10px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-left: 89px;
-    gap: 4px;
-    margin-left: 3.125em;
-    font-family: "Poppins";
-}
-
-.inputs-container__main .inputs-select__main{
-    width: 210px;
-    height: 44px;
-    border: 1px solid #2CBE82;
-    border-radius: 10px;
-    margin-left: 1.688em;
-    font-family: "Poppins";
-    padding-left: 12px;
-    margin-right: 28px;
-}
-
-/* Estilizando planner*/
-
-.planner__container{
-    background-color: transparent;
-    display: flex;
-}
-
-.container__planner-horarios{
-    background-color: transparent;
-    width: max-content;
-    padding-left: 1em;
-}
-
-.container__planner-horarios .planner__horario{
-    width: 85px;
-    height: 75px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 9px;
-    font-weight: 400;
-    font-size: 17px;
-}
-
-.container__dias-semana{
-    display: flex;
-    margin-left: 1em;
-}
-
-.container__dias-semana .dia__semana{
-    height: 33px;
-    width: 150px;
-    left: 0px;
-    top: 0px;
-    
-    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
-    border-radius: 9px 9px 0px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1.75em;
-    font-weight: 700;
-    font-size: 17px;
-    color: var(--branco);
-}
-
-.dia-segunda__color{
-    background-color: #FFA246;
-}
-
-.dia-terça__color{
-    background-color: #35E185;
-}
-
-#dia-quarta__color{
-    background-color: #6688FF;
-    width: 190px;
-}
-
-.dia-quinta__color{
-    background-color: #B266FF;
-}
-
-.dia-sexta__color{
-    background-color: #66D1FF;
-}
-
-.dia-sabado__color{
-    background-color: #FF66D4;
-}
-
-.dia-domingo__color{
-    background-color: #FF6666;
-}
-
-.grid-etiquetas__main{
-    height: 200px;
-    width: 200px;
-    background-color: blue;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    font-size: 1.4vw;
 }
