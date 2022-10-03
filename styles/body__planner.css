@@ -78,36 +78,41 @@
     background-color: #FF6666;
 }
 
+.body__planner{
+    display: flex;
+}
+
 .container-etiquetas__main{
     background-color: transparent;
     display: flex;
     flex-direction: column;
 }
 
-.container-card__main{
-    display: flex;
-    width: 512px;
-    margin-left: 19px;
-
-    background: linear-gradient(112.83deg, rgba(255, 255, 255, 0.3444) 0%, rgba(255, 255, 255, 0.336) 110.84%);
-    border: 1px solid #FFFFFF;
-    border-radius: 15px;
-    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+.card__planner{
+        display: flex;
+        margin-top: 10px;
+        width: 512px;
+        min-height: 85px;
+    
+        background: linear-gradient(112.83deg, rgba(255, 255, 255, 0.3444) 0%, rgba(255, 255, 255, 0.336) 110.84%);
+        border: 1px solid #FFFFFF;
+        border-radius: 15px;
+        box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 
-.container-cards-interno__main{
-    display: flex;
-    margin-top: 10px;
-}
 .planner-horario-interno__card{
     width: 85px;
-    background: #FFFFFF;
+    min-height: 85px;
+    background: orange;
+    color: #FFFFFF;
     box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 20px;
+    margin-top: 10px;
+    margin-left: 14px;
 }
 
 .horario-interno__card{
@@ -116,7 +121,7 @@
     padding: 10px;
 }
 
-.container-card__main .border-card__main{
+.border-card__main{
     width: 3%;
 
     background: orange;
@@ -124,19 +129,19 @@
 }
 
 .texto-button__card-interno{
-    width: 87%;
+    width: 97%;
     display: flex;
     justify-content: space-between;
 }
 
-.container-card__main .texto-card__main{
+.texto-card__main{
     padding: 13px;
     font-weight: 400;
     font-size: 20px;
     color: #333333;
 }
 
-.container-card__main .button-card__main{
+.button-card__main{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -157,7 +162,6 @@
 
 .planner-horario__card{
     width: 85px;
-    background: #FFFFFF;
     box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
     border-radius: 10px;
     display: flex;
