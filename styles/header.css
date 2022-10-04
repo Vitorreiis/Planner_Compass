@@ -42,13 +42,26 @@
     font-family: 'Poppins';
 }
 
+.button__header:hover{
+    cursor: pointer;
+}
+
 .button-green__header{
     background-color: var(--cor-secundaria);
+}
+.button-green__header:hover{
+    background-color: #006400;
+    transition: all 1s;
+     
 }
 
 .button-red__header{
     background-color: var(--cor-terciaria);
     margin-left: 1em;
+}
+.button-red__header:hover{
+    background-color: #8b0000;
+    transition: all 1s;
 }
 
 .container-date__header{

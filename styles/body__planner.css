@@ -40,6 +40,7 @@
     
     box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
     border-radius: 9px 9px 0px 0px;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,34 +49,65 @@
     font-size: 17px;
     color: var(--branco);
 }
+.dia__semana:hover{
+    cursor: pointer;
+}
 
 .dia-segunda__color{
     background-color: #FFA246;
 }
-
-.dia-terça__color{
-    background-color: #35E185;
+.dia-segunda__color:hover{
+    background-color: #cc7000;
+    transition: all 1s; 
 }
 
-#dia-quarta__color{
+.dia-terca__color{
+    background-color: #35E185;
+}
+.dia-terca__color:hover{
+    background-color: #006400;
+    transition: all 1s;
+}
+
+.dia-quarta__color{
     background-color: #6688FF;
     width: 190px;
+}
+.dia-quarta__color:hover{
+    background-color: #00008b;
+    transition: all 1s;
 }
 
 .dia-quinta__color{
     background-color: #B266FF;
 }
+.dia-quinta__color:hover{
+    background-color: #800080;
+    transition: all 1s;
+}
 
 .dia-sexta__color{
     background-color: #66D1FF;
+}
+.dia-sexta__color:hover{
+    background-color: #008b8b;
+    transition: all 1s;
 }
 
 .dia-sabado__color{
     background-color: #FF66D4;
 }
+.dia-sabado__color:hover{
+    background-color: #e00074;
+    transition: all 1s;
+}
 
 .dia-domingo__color{
     background-color: #FF6666;
+}
+.dia-domingo__color:hover{
+    background-color: #8b0000;
+    transition: all 1s;
 }
 
 .body__planner{
@@ -158,6 +190,10 @@
     border: none;
     margin-right: 8px;
     margin-top: 6px;
+}
+.button-card__main:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 
 .planner-horario__card{
