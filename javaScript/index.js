@@ -9,8 +9,12 @@ let data = {
 };
 
 
-localStorage.setItem('data', JSON.stringify(data));
-data = JSON.parse(localStorage.getItem('data'))
+const salvar = () => {
+    localStorage.setItem('data', JSON.stringify(data));
+    data = JSON.parse(localStorage.getItem('data'))
+}
+
+salvar();
 
 const criarCard = (element) => {
 

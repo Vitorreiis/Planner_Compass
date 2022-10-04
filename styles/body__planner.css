@@ -59,6 +59,7 @@
 .dia-segunda__color:hover{
     background-color: #cc7000;
     transition: all 1s; 
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 
 .dia-terca__color{
@@ -67,6 +68,7 @@
 .dia-terca__color:hover{
     background-color: #006400;
     transition: all 1s;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 
 .dia-quarta__color{
@@ -76,6 +78,7 @@
 .dia-quarta__color:hover{
     background-color: #00008b;
     transition: all 1s;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 
 .dia-quinta__color{
@@ -84,6 +87,7 @@
 .dia-quinta__color:hover{
     background-color: #800080;
     transition: all 1s;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 
 .dia-sexta__color{
@@ -92,6 +96,7 @@
 .dia-sexta__color:hover{
     background-color: #008b8b;
     transition: all 1s;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 
 .dia-sabado__color{
@@ -100,6 +105,7 @@
 .dia-sabado__color:hover{
     background-color: #e00074;
     transition: all 1s;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 
 .dia-domingo__color{
@@ -108,6 +114,7 @@
 .dia-domingo__color:hover{
     background-color: #8b0000;
     transition: all 1s;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 
 .body__planner{
