@@ -49,8 +49,13 @@
     font-size: 17px;
     color: var(--branco);
 }
+.container__dias-semana .dia__semana.clicado{
+    cursor: pointer;
+    width: 170px;
+}
 .dia__semana:hover{
     cursor: pointer;
+    width: 170px;
 }
 
 .dia-segunda__color{
@@ -162,8 +167,6 @@
 
 .border-card__main{
     width: 3%;
-
-    background: orange;
     border-radius: 15px 0px 0px 15px;
 }
 
@@ -215,3 +218,19 @@
     font-size: 17px;
     margin-left: 1em;
 }
+
+/*
+::-webkit-scrollbar{
+    display: flex;
+    background-color: blue;
+    width: 50px;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+    border-radius: 22px;
+    margin: 65px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: orange;
+    border-radius: 8px;
+    width: 8px;
+}*/
