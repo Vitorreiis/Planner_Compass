@@ -23,6 +23,28 @@
     font-weight: 400;
     font-size: 17px;
     margin-left: 1em;
+    border-left: 40px;
+}
+.card__planner.segunda{
+    border-left-color: #cc7000;
+}
+.card__planner.terca{
+    border-left-color: #35E185;
+}
+.card__planner.quarta{
+    border-left-color: #6688FF;
+}
+.card__planner.quinta{
+    border-left-color: #B266FF;
+}
+.card__planner.sexta{
+    border-left-color: #66D1FF;
+}
+.card__planner.sabado{
+    border-left-color: #FF66D4;
+}
+.card__planner.domingo{
+    border-left-color: #FF6666;
 }
 
 .container__dias-semana{
@@ -132,6 +154,10 @@
     flex-direction: column;
 }
 
+.container-cards-interno__main{
+    display: flex;
+}
+
 .card__planner{
         display: flex;
         margin-top: 10px;
@@ -174,6 +200,8 @@
     width: 97%;
     display: flex;
     justify-content: space-between;
+    border-left: 25px;
+    margin-left: 50px;
 }
 
 .texto-card__main{
@@ -219,18 +247,22 @@
     margin-left: 1em;
 }
 
-/*
+.choqueHorario div{
+    border-left-color: red;
+}
+.planner-horario-interno__card.choqueHorario{
+    background-color: red;
+}
+
+
 ::-webkit-scrollbar{
-    display: flex;
-    background-color: blue;
-    width: 50px;
     box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
     border-radius: 22px;
-    margin: 65px;
+    width: 16px;
 }
 
 ::-webkit-scrollbar-thumb{
-    background: orange;
+    background: #DCDFE3;
     border-radius: 8px;
     width: 8px;
-}*/
+}

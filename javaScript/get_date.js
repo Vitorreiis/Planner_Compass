@@ -6,7 +6,7 @@ var agora = new Date();
 
 console.log(agora)
 
-var horario = String(agora.getHours()).padStart(2, '0') + ':' + String(agora.getMinutes()).padEnd(2, '0');
+var horario = String(agora.getHours()).padStart(2, '0') + ':' + String(agora.getMinutes()).padEnd('0', 2);
 
 console.log(horario)
 

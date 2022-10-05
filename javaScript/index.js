@@ -1,12 +1,5 @@
-let data = {
-    arraySegunda: [
-        /*        {
-                    card : "vitao",
-                    horario : '1',
-                    indice : '2',
-                    dia : 'segunda'
-                }*/
-    ],
+let data = JSON.parse(localStorage.getItem('data')) ||{
+    arraySegunda: [],
     arrayTerca: [],
     arrayQuarta: [],
     arrayQuinta: [],
@@ -16,39 +9,39 @@ let data = {
 };
 
 
-const salvar = () => {
-    localStorage.setItem('data', JSON.stringify(data));
-    data = JSON.parse(localStorage.getItem('data'))
+const btnSalvar = () =>{
+    let dados = JSON.stringify(data);
+    localStorage.setItem('data', dados);
 }
 
-salvar();
+const btnExcluir = () => {
+    localStorage.removeItem('data')
+}
 
-const criarCard = (element) => {
 
-    const button = element.target.getAttribute('id-day');
-    console.log(button)
+const criarCard = (idDay) => {
 
     let dia = [];
 
-    if (button == "segunda") {
+    if (idDay == "segunda") {
         dia = [...data.arraySegunda];
     }
-    if (button == "terca") {
+    if (idDay == "terca") {
         dia = [...data.arrayTerca];
     }
-    if (button == "quarta") {
+    if (idDay == "quarta") {
         dia = [...data.arrayQuarta];
     }
-    if (button == "quinta") {
+    if (idDay == "quinta") {
         dia = [...data.arrayQuinta];
     }
-    if (button == "sexta") {
+    if (idDay == "sexta") {
         dia = [...data.arraySexta];
     }
-    if (button == "sabado") {
+    if (idDay == "sabado") {
         dia = [...data.arraySabado];
     }
-    if (button == "domingo") {
+    if (idDay == "domingo") {
         dia = [...data.arrayDomingo];
     }
 
@@ -59,6 +52,8 @@ const criarCard = (element) => {
     containerHorario.innerHTML = '';
 
     dia.forEach(containerDia => {
+        if(!containerDia.renderizado){
+
         const horario = document.createElement('li');
         horario.innerHTML = `
        <div class="planner-horario-interno__card" style="background: ${containerDia.color};">
@@ -69,38 +64,57 @@ const criarCard = (element) => {
 
         const card = document.createElement('li');
         card.classList.add('container-cards-interno__main');
-        card.innerHTML = `
-           <div class="card__planner" id="cardItem">
-               <div class="border-card__main" style="background: ${containerDia.color};"></div>
+            card.innerHTML = `
+           <div class="card__planner ${idDay}" id="cardItem">
                <div class="texto-button__card-interno">
                    <p class="texto-card__main" id="textoDigitado">${containerDia.card}</p>
                    <input class="button-card__main" type="button" value="Apagar" data-indice=${containerDia.indice}></input>
                </div>
            </div>
        `
-        containerCard.appendChild(card);
         
+        for(let i = 0; i < dia.length; i++){
+            if(!dia[i].renderizado){
+            if((containerDia.horario == dia[i].horario) 
+            && (containerDia.indice != dia[i].indice)){
+                card.classList.add('choqueHorario');
+                horario.classList.add('choqueHorario');
+                card.innerHTML+=
+                    `
+                        <div class="card__planner" id="cardItem">
+                            <div class="texto-button__card-interno">
+                                <p class="texto-card__main" id="textoDigitado">${dia[i].card}</p>
+                                <input class="button-card__main" type="button" value="Apagar" data-indice=${dia[i].indice}></input>
+                            </div>
+                        </div>
+                    `
+                dia[i].renderizado = true;
+            }
+            }
+        }
+        containerCard.appendChild(card);
+    }  
     })
-    const hora = (data.arraySegunda.sort());
-    console.log(hora)
-    document.querySelectorAll('.clicado').forEach(item => {
-        item.classList.remove('clicado')
-    })
-    element.target.classList.add('clicado')
+    for (const key in data) {
+        data[key].forEach(element => {
+            delete element.renderizado;
+        })
+    }
 }
 
-document.querySelector('.dia-segunda__color').addEventListener('click', criarCard);
-document.querySelector('.dia-terca__color').addEventListener('click', criarCard);
-document.querySelector('.dia-quarta__color').addEventListener('click', criarCard);
-document.querySelector('.dia-quinta__color').addEventListener('click', criarCard);
-document.querySelector('.dia-sexta__color').addEventListener('click', criarCard);
-document.querySelector('.dia-sabado__color').addEventListener('click', criarCard);
-document.querySelector('.dia-domingo__color').addEventListener('click', criarCard);
+function addClicado (element) {
+    document.querySelectorAll('.dia__semana').forEach(item => {
+        item.classList.remove('clicado')
+    })
+    element.classList.add('clicado');
+}
 
 
 const refreshScreen = (dia) => {
 
-    let dia1 = [];
+    console.log('Dia linha 1', dia)
+    /*let dia1 = [];
+
 
     if (dia == "segunda") {
         dia1 = [...data.arraySegunda];
@@ -122,15 +136,18 @@ const refreshScreen = (dia) => {
     }
     if (dia == "domingo") {
         dia1 = [...data.arrayDomingo];
-    }
+    }*/
 
-    const containerCard = document.getElementById('containerCards');
+    /*const containerCard = document.getElementById('containerCards');
     containerCard.innerHTML = '';
 
     const containerHorario = document.getElementById('containerHorarios');
-    containerHorario.innerHTML = '';
+    containerHorario.innerHTML = '';*/
 
-    dia1.forEach(containerDia => {
+    console.log(dia)
+    criarCard(dia);
+
+    /*dia1.forEach(containerDia => {
         const horario = document.createElement('li');
         horario.innerHTML = `
        <div class="planner-horario-interno__card" style="background: ${containerDia.color};">
@@ -152,7 +169,7 @@ const refreshScreen = (dia) => {
            </div>
        `
         containerCard.appendChild(card);
-    })
+    })*/
 }
 
 const cadastrarNovaTarefa = () => {
@@ -181,99 +198,115 @@ const cadastrarNovaTarefa = () => {
     const colorSabado = '#FF66D4';
     const colorDomingo = '#FF6666';
 
-    if (inputAtividade == null) {
-        alert('Preencha o formulário')
-    }
-
     if (dia == 'Segunda-feira') {
         data.arraySegunda.push({ 'card': textoCard, horario, indice, dia, 'color': colorSegunda });
-        refreshScreen('segunda');
+        criarCard('segunda');
         inputAtividade.value = '';
         inputDiaSemana.value = 'domingo-semana';
         inputHorario.value = '00:00';
+        addClicado(document.querySelector('[id-day= segunda]'))
 
     } else if (dia == 'Terça-feira') {
         data.arrayTerca.push({ 'card': textoCard, horario, indice, dia, 'color': colorTerca });
-        refreshScreen('terca');
+        criarCard('terca');
         inputAtividade.value = '';
         inputDiaSemana.value = 'domingo-semana';
         inputHorario.value = '00:00';
+        addClicado(document.querySelector('[id-day= terca]'))
     }
     else if (dia == 'Quarta-feira') {
         data.arrayQuarta.push({ 'card': textoCard, horario, indice, dia, 'color': colorQuarta });
-        refreshScreen('quarta');
+        criarCard('quarta');
         inputAtividade.value = '';
         inputDiaSemana.value = 'domingo-semana';
         inputHorario.value = '00:00';
+        addClicado(document.querySelector('[id-day= quarta]'))
     }
     else if (dia == 'Quinta-feira') {
         data.arrayQuinta.push({ 'card': textoCard, horario, indice, dia, 'color': colorQuinta });
-        refreshScreen('quinta');
+        criarCard('quinta');
         inputAtividade.value = '';
         inputDiaSemana.value = 'domingo-semana';
         inputHorario.value = '00:00';
-    }
+        addClicado(document.querySelector('[id-day= quinta]'))    }
     else if (dia == 'Sexta-feira') {
         data.arraySexta.push({ 'card': textoCard, horario, indice, dia, 'color': colorSexta });
-        refreshScreen('sexta');
+        criarCard('sexta');
         inputAtividade.value = '';
         inputDiaSemana.value = 'domingo-semana';
         inputHorario.value = '00:00';
+        addClicado(document.querySelector('[id-day= sexta]'))
     }
     else if (dia == 'Sábado') {
         data.arraySabado.push({ 'card': textoCard, horario, indice, dia, 'color': colorSabado });
-        refreshScreen('sabado');
+        criarCard('sabado');
         inputAtividade.value = '';
         inputDiaSemana.value = 'domingo-semana';
         inputHorario.value = 'h1';
+        addClicado(document.querySelector('[id-day= sabado]'))
 
     }
     else if (dia == 'Domingo') {
         data.arrayDomingo.push({ 'card': textoCard, horario, indice, dia, 'color': colorDomingo });
-        refreshScreen('domingo');
+        criarCard('domingo');
         inputAtividade.value = '';
         inputDiaSemana.value = 'domingo-semana';
         inputHorario.value = 'h1';
+        addClicado(document.querySelector('[id-day= domingo]'))
     }
 }
 
-const removerItem = (index) => {
-    for (const dia in data) {
+const removerItem = (index, dia) => {
+    for (let dia in data) {
         data[dia].forEach((cdia, i) => {
             if (cdia.indice == index) {
+                console.log(cdia)
+                console.log('antes do splice', data[dia])
                 data[dia].splice(i, 1);
-                refreshScreen();
+                console.log('depois do splice', data[dia])
             }
         })
     }
+    criarCard(checkDia());
 }
 
-const excluirTodos = (index) => {
-    const button = document.querySelector('.clicado').getAttribute('id-day');
+/*for (const key in data) {
+    data[key].forEach(element => {
+        delete element.renderizado;
+    })
+}*/
 
-    if (button == "segunda") {
+const excluirTodos = () => {
+    let dia = checkDia();
+
+    if (dia == "segunda") {
         data.arraySegunda = [];
     }
-    if (button == "terca") {
-        dia1 = [...data.arrayTerca];
+    if (dia == "terca") {
+        data.arrayTerca = [];
     }
-    if (button == "quarta") {
-        dia1 = [...data.arrayQuarta];
+    if (dia == "quarta") {
+        data.arrayQuarta = [];
     }
-    if (button == "quinta") {
-        dia1 = [...data.arrayQuinta];
+    if (dia == "quinta") {
+        data.arrayQuinta = [];
     }
-    if (button == "sexta") {
-        dia1 = [...data.arraySexta];
+    if (dia == "sexta") {
+        data.arraySexta = [];
     }
-    if (button == "sabado") {
-        dia1 = [...data.arraySabado];
+    if (dia == "sabado") {
+        data.arraySabado = [];
     }
-    if (button == "domingo") {
-        dia1 = [...data.arrayDomingo];
+    if (dia == "domingo") {
+        data.arrayDomingo = [];
     }
 
-    refreshScreen();
+    criarCard(dia);
+}
+
+function checkDia (){
+    const dia = document.querySelector('.clicado').getAttribute('id-day');
+    return dia;
 }
 
 function clickItem(evento) {
@@ -288,4 +321,34 @@ function clickItem(evento) {
 document.getElementById('containerCards').addEventListener('click', clickItem);
 document.querySelector('#addTarefa').addEventListener('click', cadastrarNovaTarefa);
 document.querySelector('#excluirTarefa').addEventListener('click', excluirTodos);
+document.querySelector('#salvar').addEventListener('click', btnSalvar)
+document.querySelector('#excluir').addEventListener('click', btnExcluir)
 
+document.querySelector('.dia-segunda__color').addEventListener('click', (e) => {
+    criarCard(e.target.getAttribute('id-day'))
+    addClicado(e.target);
+});
+document.querySelector('.dia-terca__color').addEventListener('click', (e) => {
+    criarCard(e.target.getAttribute('id-day'))
+    addClicado(e.target);
+});
+document.querySelector('.dia-quarta__color').addEventListener('click', (e) => {
+    criarCard(e.target.getAttribute('id-day'))
+    addClicado(e.target);
+});
+document.querySelector('.dia-quinta__color').addEventListener('click', (e) => {
+    criarCard(e.target.getAttribute('id-day'))
+    addClicado(e.target);
+});
+document.querySelector('.dia-sexta__color').addEventListener('click', (e) => {
+    criarCard(e.target.getAttribute('id-day'))
+    addClicado(e.target);
+});
+document.querySelector('.dia-sabado__color').addEventListener('click', (e) => {
+    criarCard(e.target.getAttribute('id-day'))
+    addClicado(e.target);
+});
+document.querySelector('.dia-domingo__color').addEventListener('click', (e) => {
+    criarCard(e.target.getAttribute('id-day'))
+    addClicado(e.target);
+});
