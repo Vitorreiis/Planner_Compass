@@ -56,7 +56,7 @@ const criarCard = (idDay) => {
 
         const horario = document.createElement('li');
         horario.innerHTML = `
-       <div class="planner-horario-interno__card" style="background: ${containerDia.color};">
+       <div class="planner-horario-interno__card ${idDay}" style="background: ${containerDia.color};">
            <h2 class="horario-interno__card">${containerDia.horario}</h2>
        </div>
        `

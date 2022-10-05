@@ -26,7 +26,7 @@
     border-left: 40px;
 }
 .card__planner.segunda{
-    border-left-color: #cc7000;
+    border-left-color: #FFA246;
 }
 .card__planner.terca{
     border-left-color: #35E185;
@@ -168,6 +168,7 @@
         border: 1px solid #FFFFFF;
         border-radius: 15px;
         box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+        border-left: solid 15px;
 }
 
 .planner-horario-interno__card{
@@ -200,8 +201,6 @@
     width: 97%;
     display: flex;
     justify-content: space-between;
-    border-left: 25px;
-    margin-left: 50px;
 }
 
 .texto-card__main{
