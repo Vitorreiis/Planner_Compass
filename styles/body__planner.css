@@ -73,11 +73,11 @@
 }
 .container__dias-semana .dia__semana.clicado{
     cursor: pointer;
-    width: 170px;
+    width: 190px;
 }
 .dia__semana:hover{
     cursor: pointer;
-    width: 170px;
+    width: 190px;
 }
 
 .dia-segunda__color{
@@ -249,8 +249,8 @@
 .choqueHorario div{
     border-left-color: red;
 }
-.planner-horario-interno__card.choqueHorario{
-    background-color: red;
+.planner-horario-interno__card .choqueHorario{
+    background: red;
 }
 
 
